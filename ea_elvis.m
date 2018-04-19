@@ -355,6 +355,12 @@ if isfield(options.d3,'expdf')
         return
     end
 end
+
+% Show ExploreDTI data
+if isfield(options,'exploredti') && options.exploredti.do
+    ea_dti_show_exploredti(resultfig);
+end
+
 %% End of patient-specific part.
 
 % Initialize a draggable lightbulb

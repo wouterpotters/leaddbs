@@ -233,6 +233,8 @@ catch
     options.dolc=0;
 end
 
+options.exploredti.do = get(handles.chk_ExploreDTI_data,'Value');
+
 % lead connectome mapper options:
 try
     sdp=get(handles.seeddefpopup,'String');

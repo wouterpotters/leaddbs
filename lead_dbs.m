@@ -117,6 +117,9 @@ ea_bind_dragndrop(handles.leadfigure, ...
     @(obj,evt) DropFcn(obj,evt,handles), ...
     @(obj,evt) DropFcn(obj,evt,handles));
 
+%% add DTI interface
+handles = ea_dti_addinterface(handles);
+
 % Choose default command line output for lead_dbs
 handles.output = hObject;
 
@@ -992,6 +995,27 @@ function openleadconnectome_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 lead_connectome('dependent');
 
+% --- Executes on button press in openleadconnectome.
+function openexploredtidata_Callback(hObject, eventdata, handles)
+% hObject    handle to openleadconnectome (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+patdir = getappdata(handles.leadfigure,'uipatdir');
+if isempty(patdir)
+    warning('No patient directory selected')
+    return
+end
+if length(patdir) > 1
+    warning('Only 1 patient directory supported')
+    return
+end
+ea_dti_load_exploredti(patdir{:});
+
+function include_exploredti_ButtonDownFcn(hObject, eventdata, handles)
+ea_storeui(handles);
+
+function include_exploredti_Callback(hObject, eventdata, handles)
+ea_storeui(handles);
 
 % --- Executes on button press in specify2dwrite.
 function specify2dwrite_Callback(hObject, eventdata, handles)
