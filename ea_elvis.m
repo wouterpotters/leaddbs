@@ -504,6 +504,12 @@ trajcontrolfig=getappdata(gcf,'trajcontrolfig');
 try
     close(trajcontrolfig)
 end
+electrode_histogram_figures = findobj('Tag','electrode_histogram');
+for el = electrode_histogram_figures
+    try 
+        delete(el)
+    end
+end
 delete(gcf)
 
 
