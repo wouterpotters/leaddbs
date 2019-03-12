@@ -381,6 +381,12 @@ if isfield(options.d3,'expdf')
 end
 %% End of patient's part.
 
+% Show ExploreDTI data
+if isfield(options,'exploredti') && options.exploredti.do
+    ea_dti_show_exploredti(resultfig);
+end
+
+%% End of patient-specific part.
 % Initialize a draggable lightbulb
 hold on
 ea_show_light(resultfig,1);
@@ -537,6 +543,12 @@ try
     close(discfiberscontrol)
 end
 
+electrode_histogram_figures = findobj('Tag','electrode_histogram');
+for el = electrode_histogram_figures
+    try 
+        delete(el)
+    end
+end
 delete(gcf)
 
 
