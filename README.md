@@ -3,6 +3,16 @@ LEAD-DBS
 
 LEAD-DBS is *NOT* intended for clinical use!
 
+### About the adaption we made for our paper
+Distance to white matter tracts is associated with deep brain stimulation motor outcome in Parkinson’s disease
+Prent et al. 2019 https://doi.org/10.3171/2019.5.JNS1952
+1. We added a button to import ExploreDTI data.
+2. We added functionality to the visualisation tool within Lead DBS.
+   - visualise DTI tracts loaded from ExploreDTI *.mat file
+   - calculate distance from contact points to ExploreDTI tracts
+   - color DTI tracts according to contact points
+   - create histograms to show overview of minimal tract-electrode distance for each contact point.
+
 ### About Lead-DBS
 
 LEAD-DBS is a MATLAB-toolbox facilitating the: 
