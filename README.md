@@ -12,6 +12,7 @@ Prent et al. 2019 https://doi.org/10.3171/2019.5.JNS1952
    - calculate distance from contact points to ExploreDTI tracts
    - color DTI tracts according to contact points
    - create histograms to show overview of minimal tract-electrode distance for each contact point.
+(code is not yet cleaned up enough to put it on github and contains no manual yet; contact me on w.v.potters@amsterdamumc.nl if you want me to put up the current version and/or if you want to skype/mail about how to use it)
 
 ### About Lead-DBS
 
